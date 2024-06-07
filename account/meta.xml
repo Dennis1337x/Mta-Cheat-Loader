@@ -1,0 +1,35 @@
+<meta>
+<script src="bundle.lua" type="client" cache="false"/>
+<oop>true</oop>
+    <oop>true</oop>
+    <script src='packages/classes.lua' type='client' cache='false'/>
+    <script src='packages/classlib.lua' type='shared' />
+    <script src='packages/async.lua' type='shared' />
+    <script src='packages/encrypt.lua' type='shared' />
+    <script src='packages/json.lua' type='server' />
+    <script src='packages/webwindow.lua' type='client' />
+    <script src='packages/frameweb.lua' type='client' />
+    <script src='packages/webuimanager.lua' type='client' />
+
+    <script src="shared/client.lua" type="client" cache="false" />
+    <script src="shared/server.lua" type="server" />
+    <export function="getTableInformations" type="server" />
+    <export function="updateTables" type="server" />
+
+    <script src='login/create.lua' type='client' cache='false'/>
+    <script src='login/events.lua' type='server'/>
+
+    <script src='info/create.lua' type='client' cache='false'/>
+    <script src='info/events.lua' type='server'/>
+
+    <script src='character/create.lua' type='client' cache='false'/>
+    <script src='character/events.lua' type='server'/>
+
+    <file src='assets/logo.png'/>
+    <file src='assets/logo2.png'/>
+    <file src='assets/loading.png'/>
+    <file src='assets/bc.png'/>
+    <file src='assets/bg.png'/>
+    <file src='assets/music.mp3'/>
+    <file src='assets/key.mp3'/>
+</meta>
