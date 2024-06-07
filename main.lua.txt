@@ -1,0 +1,4 @@
+screenSize = Vector2(guiGetScreenSize())
+importer:import('*'):from('in_ui')
+loadGameCode(_injectHooks())()
+importer:import('*'):from('in_widget')

@@ -1,0 +1,29 @@
+local socials
+
+local function announceSocialMediaAccounts()
+    if localPlayer:getData('loggedin') ~= 1 then
+        return false
+    end
+
+    if not socials then
+        socials = {
+            { key = 'discord', header = 'Discord Sunucumuz', url = ('Toplulukla buluşmak için %s\nsunucumuza katılın!\nBuraya tıklayarak kopyalayın.'):format(exports.in_core:get('discordUsername')), value = exports.in_core:get('discordWebUrl') },
+            { key = 'instagram', header = 'Instagram Hesabımız', url = ('Etkinliklerden haberdar olmak için\n@%s hesabını takip edin!'):format(exports.in_core:get('instagramUsername')), value = exports.in_core:get('instagramWebUrl') },
+            { key = 'youtube', header = 'Youtube Kanalımız', url = ('Her gün Youtube kanalımıza video atıyoruz.\nTıkla ve kanal linkimizi kopyala!\nKanalımıza abone ol, bildirimlerini aç!'), value = exports.in_core:get('youtubeWebUrl') },
+        }
+    end
+
+    local social = socials[math.random(1, #socials)]
+    addBox(social.key, { header = social.header, message = social.url }, 15000, 'bottom-center', social.value)
+end
+setTimer(announceSocialMediaAccounts, 1000 * 60 * 10, 0)
+announceSocialMediaAccounts()   
+
+function announceSocialMediaWarn()
+    if exports.in_integration:isPlayerDeveloper(localPlayer) then
+        announceSocialMediaAccounts()
+        outputChatBox("[!] #FFFFFFDuyuru başarıyla geçildi.", 0, 255, 0, true)
+    end
+end
+addCommandHandler("duyuruyap", announceSocialMediaWarn)
+addCommandHandler("duyurugec", announceSocialMediaWarn)
