@@ -1,0 +1,5 @@
+<meta>
+	<info author="C4N" type="script" name="Oscuri Roleplay Kupon Sistemi" />
+	<script src="c_orp_kupon.lua" type="client" cache="false" />
+	<script src="s_orp_kupon.lua" type="server" />
+</meta>
